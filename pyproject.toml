@@ -1,0 +1,29 @@
+[project]
+name = "calldesnac"
+version = "0.1.0"
+description = "A stripped-down SNAC audio decoder that calls an LLM API"
+dependencies = [
+    "torch",
+    "snac",
+    "requests",
+    "numpy",
+]
+requires-python = ">=3.10"
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "ruff",
+]
+
+[tool.pdm.scripts]
+check-format = "ruff check"
+tidy = "ruff format"
+lint = {composite = ["check-format"]}
+tidytest = {composite = ["tidy", "lint"]}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.ruff]
+line-length = 100
