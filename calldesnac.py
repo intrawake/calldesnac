@@ -29,7 +29,9 @@ def parse_raw_id(token_string):
 def main():
     parser = argparse.ArgumentParser(description="Call LLM for SNAC tokens and decode to audio")
     parser.add_argument(
-        "--openai-api-url", default="http://127.0.0.1:11436/v1", help="OpenAI-compatible API base URL"
+        "--openai-api-url",
+        default="http://127.0.0.1:11434/v1",
+        help="OpenAI-compatible API base URL",
     )
     parser.add_argument("--model", default="orpheus-tts", help="Model name for API")
     parser.add_argument("--prompt", help="Text to synthesize (defaults to stdin)")

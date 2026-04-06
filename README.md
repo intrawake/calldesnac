@@ -46,7 +46,7 @@ The wrapper automatically handles volume mounting for the `--output` file:
 
 ### Arguments
 
-- `--openai-api-url`: OpenAI-compatible API base URL (defaults to `http://127.0.0.1:11436/v1`).
+- `--openai-api-url`: OpenAI-compatible API base URL (defaults to `http://127.0.0.1:11434/v1`).
 - `--model`: Model name for the API (defaults to `orpheus-tts`).
 - `--voice`: Voice name prefix (defaults to `tara`).
 - `--output`: Output WAV file (defaults to stdout).
