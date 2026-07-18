@@ -10,24 +10,26 @@ dependencies = [
 ]
 requires-python = ">=3.10"
 
-[tool.pdm.dev-dependencies]
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[dependency-groups]
 dev = [
+    "pytest",
     "ruff",
-    "sxpb @ git+https://github.com/sxproto/sxpb-py@aa4e1e5830483c8ba0c549f78dce38b5be9a1885",
+    "sxpb @ git+https://github.com/sxproto/sxpb-py@02bf7b5d5ab5be6e9756e6c0ec3d463fca2c62dd",
 ]
 
 [tool.pdm.scripts]
 check-format = "ruff check"
 lint-sxpb = "sxpb-lint --ignore-file .gitignore"
+test = "pytest -q"
 tidy-python = "ruff format"
 tidy-sxpb = "sxpb-tidy --ignore-file .gitignore"
 tidy = {composite = ["tidy-python", "tidy-sxpb"]}
 lint = {composite = ["check-format", "lint-sxpb"]}
 tidytest = {composite = ["tidy", "lint"]}
-
-[build-system]
-requires = ["pdm-backend"]
-build-backend = "pdm.backend"
 
 [tool.ruff]
 line-length = 100
